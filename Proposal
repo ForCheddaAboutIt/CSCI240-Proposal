@@ -1,0 +1,45 @@
+Type 1: Actors
+  Entites:
+    Matt Damon
+    Jon Heder
+    Tom Cruise
+  Descriptors:
+    Name
+    Age
+    Number of Movies
+    Movies Showing
+
+Type 2: Theater
+  Entites:
+    The Willma
+    Star Movies
+    The Best Theater
+  Descriptors:
+    Location
+    Movies
+    Times
+    Snacks
+
+Type 3: Movies
+  Entites:
+    Ford vs. Ferrari
+    Napolean Dynamite
+    Top Gun Maverick
+  Descriptors:
+    Actor
+    Theater
+    Rating
+    Release Date
+
+Type 4: Future Showing
+  Entities:
+    The Matrix
+    Baby Driver
+  Descriptors:
+    Name
+    Actor
+    Showing Date
+    Number of tickets
+
+
+
