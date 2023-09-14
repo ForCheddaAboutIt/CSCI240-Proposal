@@ -1,13 +1,13 @@
-Type 1: Actors
+Type 1: Actors (Related to movies, zero or ma
   Entites:
     Matt Damon
     Jon Heder
     Tom Cruise
   Descriptors:
     Name
-    Age
-    Number of Movies
-    Movies Showing
+    Date of Birth
+Favorite Role
+   
 
 Type 2: Theater
   Entites:
@@ -16,9 +16,8 @@ Type 2: Theater
     The Best Theater
   Descriptors:
     Location
-    Movies
-    Times
-    Snacks
+    Operating Hours
+    Snacks/ Plural attribute
 
 Type 3: Movies
   Entites:
@@ -26,22 +25,16 @@ Type 3: Movies
     Napolean Dynamite
     Top Gun Maverick
   Descriptors:
-    Actor
-    Theater
+   Genre
+Runtime
     Rating
     Release Date
 
-Type 4: Future Showing
-  Entities:
-    The Matrix
-    Baby Driver
-  Descriptors:
-    Name
-    Actor
-    Showing Date
+Type 4: Showing  
+   Specific Showing Room
+    Showing Date/time
     Number of tickets
 
 1. You could use this database to see what movies are showing near you as well as future showings.
 2. Since addresses have been included you could see which is the closest theater to you that is showing the movie that you want to see. 
 3. You could search based on actors and either view a movie from an actor that you love or go see an up and coming actor that doesn't have that many movies.
-
