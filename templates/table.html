@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><table border="1">
+<head>
+	<title>Movie</title>
+</head>
+	<h1>Movie Information</h1>
+    <tbody>
+        <tr>
+            <th>Movie Title</th>
+            <th>Genre</th>
+            <th>Rating</th>
+        </tr>
+        <tr>
+            <td>The Upside</td>
+            <td>Drama/Comedy</td>
+            <td>PG-13</td>
+        </tr>
+        <tr>
+            <td>Into The Spiderverse</td>
+            <td>Action/Adventure</td>
+            <td>PG</td>
+        </tr>
+        <tr>
+            <td>Top Gun Maverick</td>
+            <td>Action/Adventure</td>
+            <td>PG-13</td>
+        </tr>
+        <tr>
+            <td>{{mtitle}}</td>
+            <td>{{genre}}</td>
+            <td>{{rating}}</td>
+
+        </tr>
+    </tb0ody>
+</center></table>
+{% endblock %}

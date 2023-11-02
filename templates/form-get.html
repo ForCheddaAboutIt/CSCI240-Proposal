@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Please enter new movie data.</h1>
+<form action="/submitformGet.html" method="GET">
+  Movie Title: <input type="text" name="mtitle"><br />
+  Genre: <input type="text" name="genre"><br />
+  Rating: <input type="text" name="rating"><br />
+  <input type="submit" name="Submit">
+</form>
+{% endblock %}
