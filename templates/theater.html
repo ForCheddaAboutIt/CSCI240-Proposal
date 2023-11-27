@@ -5,36 +5,82 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #004080;
+  }
+</style>
 
 <table>
   <tr>
-    <th>Theater_ID</th>
-    <th>TheaterName</th>
-    <th>OperatingHours</th>
+    <th>Theater ID</th>
+    <th>Theater Name</th>
+    <th>Operating Hours</th>
     <th>Location</th>
+    <th>Action</th>
   </tr>
   {% for row in collection %}
   <tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
     <td>
-      {{row[0]}}
-    </td>
-    <td>
-      {{row[1]}}
-    </td>
-    <td>
-      {{row[2]}}
-    </td>
-    <td>
-      {{row[3]}}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="?delete=true&id={{row[0]}}">Delete</a><br />
+      <a href="?delete=true&id={{ row[0] }}">Delete</a><br />
       <a href="/updateTheater?id={{ row[0] }}">Change</a>
     </td>
   </tr>
-</tr>
   {% endfor %}
 </table>
 <h2>Enter a new value here</h2>
@@ -44,5 +90,6 @@
   Location: <input type="text" name="location"><br />
   <input type="submit" value="Submit">
 </form>
+<p><a href="/">Homepage</a></p>
 
 {% endblock %}

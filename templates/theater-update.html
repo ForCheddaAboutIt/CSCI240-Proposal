@@ -5,8 +5,48 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  form {
+    font-family: Arial, sans-serif;
+    width: 50%;
+    margin-top: 20px;
+  }
 
-<h2>Enter a new value here</h2>
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #004080;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<h2>Enter a new value here:</h2>
 <form action="">
   <input type="hidden" name="id" value="{{ id }}">
   Name: <input type="text" name="name"><br />
@@ -15,4 +55,5 @@
   <input type="submit" value="Submit">
 </form>
 <a href="/">Return to list</a>
+<p><a href="/">Homepage</a></p>
 {% endblock %}
