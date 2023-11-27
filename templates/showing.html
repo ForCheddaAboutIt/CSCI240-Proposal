@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  MisCon Speakers
+{% endblock %}
+
+{% block content %}
+<style>
+  table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #004080;
+  }
+</style>
+
+<table>
+  <tr>
+    <th>Theater ID</th>
+    <th>Theater Room</th>
+    <th>Showing Date/Time</th>
+    <th>Number of Seats</th>
+    <th>Movie ID</th>
+  </tr>
+  {% for row in collection %}
+  <tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td>{{ row[4] }}</td>
+
+    <td>
+    <a href="?delete=true&id={{ row.0 }}&room={{ row.1 }}&date={{ row.2 }}&seats={{ row.3 }}&movie_ID={{ row.4 }}">Delete</a><br />
+    <a href="/updateShowing?id={{ row.0 }}&room={{ row.1 }}&date={{ row.2 }}&seats={{ row.3 }}&movie_ID={{ row.4 }}">Change</a>        
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<h2>Enter a new value here</h2>
+<form action="">
+  Theater ID: <input type="int" name="theater_ID"><br />
+  Theater Room: <input type="text" name="room"><br />
+  Date/Time: <input type="text" name="date"><br />
+  Number of Seats: <input type="int" name="seats"><br />
+  Movie ID: <input type="int" name="movie_ID"><br />
+  <input type="submit" value="Submit">
+</form>
+<p><a href="/">Homepage</a></p>
+
+{% endblock %}

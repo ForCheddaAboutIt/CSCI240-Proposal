@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block header %}{{ pageTitle }}{% endblock %}
+{% block title %}Showing Actors{% endblock %}
+
+{% block content %}
+<style>
+  table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<table>
+  <tr>
+    <th>Actor ID</th>
+    <th>Actor Name</th>
+    <th>Birth Date</th>
+    <th>Height Inches</th>
+    <th>Action</th>
+  </tr>
+  {% for row in actorList %}
+  <tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td><a href="/movie?actor_id={{ row[0] }}">View included Movies</a></td>
+    <td>
+      <a href="/actor-info?actor_id={{row[0]}}">View Actor</a><br />
+      <a href="/actor?delete_actor_id={{row[0]}}">Delete Actor</a><br />
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<h3>Add new actor</h3>
+<form action="">
+  Actor ID: <input name="new_actor_id" ><br />
+  Actor Name: <input name="new_actor_name"><br />
+  Actor BirthDate: <input name="new_actor_birthdate"><br />
+  Actor Height: <input name="new_actor_height"><br />
+  <input type="submit" value="Add actor">
+</form>
+<p><a href="/">Homepage</a></p>
+{% endblock %}
+

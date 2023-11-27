@@ -1,12 +1,47 @@
 <!doctype html>
 <html>
-   <head>
-      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-      <title>{% block title %}{% endblock %} - Flaskr</title></head>
-   <body>
-      <h1>
-         {% block header %}{% endblock %}
-      </h1>
-      {% block content %}{% endblock %}
-   </body>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: #0066cc;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  </style>
+  <title>{% block title %}{% endblock %} - Flaskr</title>
+</head>
+
+<body>
+  <h1>
+    Welcome to the Movie Database!
+  </h1>
+  {% block content %}{% endblock %}
+  <p><a href="/actor">Show all actors</a></p>
+  <p><a href="/movie">Show all movies</a></p>
+  <p><a href="/theater">Show all theaters</a></p>
+</body>
+
 </html>
